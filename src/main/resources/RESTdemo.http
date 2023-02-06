@@ -1,0 +1,56 @@
+//create new addressbook
+POST http://localhost:8080/addressBooks
+Content-Type: application/json
+
+{ "id": 1, "buddies": null }
+###
+
+//create some buddies
+POST http://localhost:8080/buddyInfoes
+Content-Type: application/json
+
+{"id":1, "name": "mob", "phoneNumber": "555-333-3333"}
+###
+
+POST http://localhost:8080/buddyInfoes
+Content-Type: application/json
+
+{"id":2, "name": "lob", "phoneNumber": "555-333-2222"}
+###
+
+POST http://localhost:8080/buddyInfoes
+Content-Type: application/json
+
+{"id":3, "name": "zob", "phoneNumber": "555-333-1111"}
+###
+
+//add buddies to the addressbook (for some reason this only works one at a time...)
+PATCH http://localhost:8080/addressBooks/1/buddies
+Content-Type: text/uri-list
+
+http://localhost:8080/buddyInfoes/1
+###
+
+PATCH http://localhost:8080/addressBooks/1/buddies
+Content-Type: text/uri-list
+
+http://localhost:8080/buddyInfoes/2
+
+###
+
+PATCH http://localhost:8080/addressBooks/1/buddies
+Content-Type: text/uri-list
+
+http://localhost:8080/buddyInfoes/3
+
+###
+//delete a buddy (could probably do a get request to find a specific buddy and its id, and then delete that specific buddy)
+DELETE http://localhost:8080/addressBooks/1/buddies/2
+
+
+
+
+
+<> 2023-01-31T220247.500.json
+<> 2023-01-31T202234.400.json
+<> 2023-01-31T201931.400.json

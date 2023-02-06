@@ -1,0 +1,24 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book</title>
+</head>
+<body>
+    <p th:text="'Address Book'" />
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        <tr th:each="bud : ${budList}">
+            <td class="align-middle" th:text="${bud.getId()}"></td>
+            <td class="align-middle" th:text="${bud.getName()}"></td>
+            <td class="align-middle" th:text="${bud.getPhoneNumber()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
