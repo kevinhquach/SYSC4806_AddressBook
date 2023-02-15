@@ -5,9 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Address Book</title>
+    <script type="text/javascript" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/home.js}"></script>
 </head>
 <body>
-    <p th:text="'Address Book'" />
+    <p id="header" th:text="'Address Book'" />
     <table>
         <tr>
             <th>ID</th>
